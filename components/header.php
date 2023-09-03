@@ -31,7 +31,8 @@
 }
 
 .nav ul.menu li a {
-  color: #444;
+  color: #764701;
+
 }
 
 .nav ul.menu li.dropdown:hover .dropdown-menu {
@@ -55,14 +56,14 @@
   background-color: #fff;
 }
 
-.logout {
+.button {
   padding: .5rem 1rem;
   border-radius: .875rem;
-  background-color: #f1f1f1;
+  background-color: #ffd262;
 }
 
-.logout:hover {
-  background-color: #cecece;
+.button:hover {
+  background-color: #fb1;
 
 }
 </style>
@@ -70,9 +71,9 @@
 <nav class="nav">
   <ul class="menu">
     <?php
-    echo "<li><a href='?home' >Home</a></li>";
-    if (isset($_GET['home'])) {
-      if (isset($_SESSION['login'])) {
+    if (isset($_SESSION['login'])) {
+      echo "<li><a href='?home' class=\"button\">Home</a></li>";
+      if (isset($_GET['home'])) {
         header('Location: ../pages/menu.php');
       } else {
         header('Location: ./index.php');
@@ -80,7 +81,7 @@
     }
     ?>
     <li class="dropdown">
-      <a href="#">Cadastro</a>
+      <a href="#" class="button">Cadastro</a>
       <ul class="dropdown-menu">
         <li><a href="?empresa">Cad. Empresas</a></li>
         <li><a href="?attproduto">Atribuir Produtos</a></li>
@@ -92,7 +93,7 @@
     <li>
       <?php
       if (isset($_SESSION['login'])) {
-        echo "<a href='?logout' class=\"logout\">Logout</a>";
+        echo "<a href='?logout' class=\"button\">Logout</a>";
         if (isset($_GET['logout'])) {
           unset($_SESSION['login']);
           session_destroy();
