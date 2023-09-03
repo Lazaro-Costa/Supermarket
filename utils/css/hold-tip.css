@@ -1,0 +1,11 @@
+.holdTip{
+  display: flex;
+  width: max-content;
+  padding: 2px 8px;
+  margin: 5px 0 5px auto;
+  border-radius: 6px;
+  font-size: .85rem;
+  color: #764701;
+  background-color: #fb1;
+  border: 3px solid #dc9d00;
+}

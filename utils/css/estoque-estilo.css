@@ -1,0 +1,46 @@
+span p{
+  margin: 5px;
+}
+#btnGetEstoque{
+  color: #764701;
+  background-color: #fb1;
+  border: 3px solid #dc9d00;
+  border-radius: 8px;
+  padding: 0 .754rem;
+  width: max-content;
+  line-height: 1.5;
+  font-family: 'IBM Plex Mono', 'Courier New', Courier, monospace;
+  font-weight: 600;
+}
+.voltar{
+  color: #764701;
+  background-color: #fb1;
+  border: 3px solid #dc9d00;
+  border-radius: 8px;
+  padding: 0 .754rem;
+  width: max-content;
+  line-height: 1.5;
+  font-family: 'IBM Plex Mono', 'Courier New', Courier, monospace;
+  font-weight: 600;
+}
+/* Table */
+.tableEstoque{
+  background: #011522;
+  display: none;
+  margin: 1rem auto;
+  width: 100%;
+}
+.tableEstoque tr{
+  background-color: #dc9d00;
+  
+}
+.tableEstoque p{
+  font-weight: 400;
+}
+
+.tableEstoque tr:nth-child(1){
+  background-color: #a67600;
+  color: #f1f1f1;
+  font-weight: 600;
+  text-transform: uppercase;
+}

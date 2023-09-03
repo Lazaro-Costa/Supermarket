@@ -1,0 +1,22 @@
+.holdSelect{
+  display: flex;
+  gap: 1rem;
+}
+.cbbox{
+  background-color: #fb1;
+  width: max-content;
+  border-radius: 4px;
+  height: 30px;
+  outline: none;
+  border: 2px solid #a67600;
+  color: #f9f9f9;
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+}
+.cbbox option{
+  line-height: 1.5;
+  color: #f9f9f9;
+  font-weight: 600;
+  font-size: 1rem;
+}

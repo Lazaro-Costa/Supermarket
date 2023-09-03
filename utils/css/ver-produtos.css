@@ -1,0 +1,82 @@
+/* Ver-Produtos */
+.tabelaProdutos{
+  display: table;
+  margin: 1rem auto;
+  width: 100%;
+}
+
+.titleHold{
+  background-color: #011522;
+  color: #f9f9f9;
+  line-height: 1.5;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+/* span do titulo */
+.titleHold span{ 
+  text-align: center;
+  padding: 0 .5rem;
+}
+/* demais spans */
+.tableRow span{
+  text-align: center;
+  padding: .5rem;
+}
+.tableRow{  
+  border: 1px solid white;
+  background-color: #c8c8c8;
+  font-size: .774rem;
+  color: #011522;
+  line-height: 1.2;
+}
+
+.tableRow:nth-child(even){
+  background-color: #a0a0a0;
+}
+.tableRow:hover{
+  background-color: #d2d2d2;
+}
+.disclaimer{
+  font-weight: 600;
+  transition: all .3s ease;
+  text-decoration: underline 1px #fb1;
+}
+.disclaimer:hover{
+  text-decoration: underline 2px #fb1;
+}
+
+/* CARDPROD */
+.gridCard{
+  display: none;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 0 auto;
+  align-items: start;
+  max-width: 50rem;
+  gap: 10px;
+}
+.cardContent{
+display: flex;
+flex-direction: column;
+width:100%;
+margin: 1rem auto;
+justify-content: center;
+
+}
+.cardContent > span:first-child {
+background-color: #011522;
+border-radius: 1rem 1rem 0 0;
+padding: 1rem;
+color: #f9f9f9;
+}
+.gridCard div div{
+display: flex;
+flex-direction: column;
+max-height: 400px;
+background-color: #fafafa;
+gap: 5px;
+}
+.gridCard div div span{
+  background-color: #c4c4c4;
+  padding: 1rem;
+  color: #011522;
+}
