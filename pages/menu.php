@@ -12,10 +12,10 @@ session_start() ?>
 
 <body>
   <style>
-    section.container {
-      background-color: #fff;
-      border-radius: 4px;
-    }
+  section.container {
+    background-color: #fff;
+    border-radius: 4px;
+  }
   </style>
   <div class="App">
     <header class="header">
@@ -45,6 +45,9 @@ session_start() ?>
           case 'attproduto':
             include_once('../pages/att-produto.php');
             break;
+          case 'verempresas':
+            include_once('../pages/show-companies.php');
+            break;
             // Completar o resto do switch
         }
       }
@@ -63,6 +66,7 @@ session_start() ?>
   <script src="../utils/js/cadEmpresa.js"></script>
   <script src="../utils/js/cadProduto.js"></script>
   <script src="../utils/js/showProduct.js"></script>
+  <script src="../utils/js/showCompanies.js"></script>
   <script src="../utils/js/attProduto.js"></script>
 </body>
 

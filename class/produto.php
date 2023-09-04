@@ -66,18 +66,6 @@ class Produto extends Conexao
   }
   public function getNomesProdutos()
   {
-    // try {
-    //   $sql = "SELECT e.nome_emp AS nome_empresa, p.nome_prod AS nome_produto, p.marca, p.tam_quant, MIN(es.preco) AS preco FROM PRODUTOS p INNER JOIN ESTOQUE es ON p.id = es.prod_id INNER JOIN EMPRESA e ON es.emp_id = e.id GROUP BY p.id ORDER BY preco ASC";
-
-    //   $stmt = $this->conexao->prepare($sql);
-    //   $stmt->execute();
-
-    //   $nomesProdutos = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-    //   return $nomesProdutos;
-    // } catch (PDOException $e) {
-    //   echo 'Erro na consulta: ' . $e->getMessage();
-    // }
     try {
       $sql = "SELECT e.nome_emp AS nome_empresa, p.nome_prod AS nome_produto, p.marca, p.tam_quant, es.preco AS preco
               FROM PRODUTOS p

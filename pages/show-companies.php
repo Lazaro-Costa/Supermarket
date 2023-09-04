@@ -1,10 +1,10 @@
 <section class="container mainContainer animeLeft">
-  <h1 class="title">Listagem de Produtos</h1>
-  <p class="disclaimer">Aqui estão as empresas que vendem nossos produtos mais baratos.</p>
+  <h1 class="title">Listagem de Empresas</h1>
+  <p class="disclaimer">Aqui estão as empresas e suas informações básicas.</p>
   <div class="holdTip">
-    <p>*Clique em alguma empresa para ver mais</p>
+    <p>*Clique em alguma empresa para ver seu estoque.</p>
   </div>
-  <table class="tabelaProdutos" id="showProd">
+  <table class="tabelaProdutos" id="showCo">
     <tbody>
       <tr class="titleHold">
         <th>
@@ -14,22 +14,22 @@
         </th>
         <th>
           <span>
-            <h1>Marca</h1>
+            <h1>Endereço</h1>
           </span>
         </th>
         <th>
           <span>
-            <h1>Produto</h1>
+            <h1>Cidade</h1>
           </span>
         </th>
         <th>
           <span>
-            <h1>Peso/Tamanho</h1>
+            <h1>N.º de Lojas</h1>
           </span>
         </th>
         <th>
           <span>
-            <h1>Preço</h1>
+            <h1>Total de Produtos</h1>
           </span>
         </th>
       </tr>

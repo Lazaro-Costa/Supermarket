@@ -1,56 +1,51 @@
-const getProducts = () => {
+const showCompanies = () => {
   $.ajax({
-    //Busca os produtos e faz a listagem na tabela
-    url: 'http://localhost/Cursophp/Supermarket/utils/getProduto.php',
+    //Busca as empresas e faz a listagem na tabela
+    url: 'http://localhost/Cursophp/Supermarket/utils/showCompanies.php',
     method: 'GET',
     datatype: 'json',
   }).done(function (result) {
+    // console.log(result);
     result.forEach((element) => {
-      $('#showProd tbody').append(`
-      <tr class="tableRow">
+      $('#showCo tbody').append(`
+      <tr class="tableRowEmp">
       <th>
         <span>
-          <h1>${element['nome_empresa']}</h1>
+          <h1>${element['nome_emp']}</h1>
         </span>
       </th>
       <th>
         <span>
-          <h1>${element['marca']}</h1>
+          <h1>${element['end']}</h1>
         </span>
       </th>
       <th>
         <span>
-          <h1>${element['nome_produto']}</h1>
+          <h1>${element['cidade']}</h1>
         </span>
       </th>
       <th>
         <span>
-          <h1>${element['tam_quant']}</h1>
+          <h1>${element['num_lojas']}</h1>
         </span>
       </th>
       <th>
         <span>
-          <h1>${Number(element['preco']).toLocaleString('pt-BR', {
-            style: 'currency',
-            currency: 'BRL',
-          })}</h1>
+          <h1>${element['total_prods']}</h1>
         </span>
       </th>
     </tr>
       `);
     });
 
-    $('.tableRow').on('click', function () {
+    $('.tableRowEmp').on('click', function () {
       //monta o card do produto que foi clicado
       const nomeSupermercado = $(this).find('h1:eq(0)').text();
-      const nomeProduto = $(this).find('h1:eq(2)').text();
-
       $.ajax({
-        url: 'http://localhost/Cursophp/Facudade2/utils/getMoreEstoque.php',
+        url: 'http://localhost/Cursophp/Supermarket/utils/getMoreInfoCo.php',
         method: 'POST',
         data: {
           nome_emp: nomeSupermercado,
-          nome_prod: nomeProduto,
         },
         datatype: 'json',
       }).done(function (result) {
@@ -58,7 +53,7 @@ const getProducts = () => {
           //se vier string é pq deu erro.
           const msg = $('.msg');
           msg.text(
-            'Parece que não existem outras empresas com o mesmo produto.',
+            'Parece que não existem outras informações com esta empresa.',
           );
           msg.fadeIn();
 
@@ -78,10 +73,10 @@ const getProducts = () => {
                 // Obtém o texto de cada <h1> e adicione ao array
                 textosDosH1.push($(this).text());
               });
-            // Compara o texto do <h1> com 'nomeProduto' e exibe uma mensagem
-            if (textosDosH1.includes(nomeProduto)) {
+            // Compara o texto do <h1> com 'nomeSupermercado' e exibe uma mensagem
+            if (textosDosH1.includes(nomeSupermercado)) {
               const msg = $('.msg');
-              msg.text('Já existe um card deste produto.');
+              msg.text('Já existe um card desta empresa.');
               msg.fadeIn();
 
               setTimeout(function () {
@@ -92,20 +87,20 @@ const getProducts = () => {
               // montagem do card abaixo
               $('.gridCard').append(`<div class="cardContent">
           <span>
-            <h1>${nomeProduto}</h1>
+            <h1>${nomeSupermercado}</h1>
           </span>
-      
+
           <div>
-            
+
           </div>
         </div>`);
 
-              if ($('.cardContent:last-child h1').text() === nomeProduto) {
+              if ($('.cardContent:last-child h1').text() === nomeSupermercado) {
                 result.forEach((element) => {
                   $('.cardContent:last-child div').append(`
             <span class="rowInfo">
-            <p>${element['nome_empresa']}</p>
-            <p>${Number(element['preco_produto']).toLocaleString('pt-BR', {
+            <p>${element['nome_produto']}</p>
+            <p>${Number(element['preco']).toLocaleString('pt-BR', {
               style: 'currency',
               currency: 'BRL',
             })}</p>
@@ -122,4 +117,4 @@ const getProducts = () => {
     });
   });
 };
-getProducts();
+showCompanies();
