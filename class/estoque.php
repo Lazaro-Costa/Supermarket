@@ -26,37 +26,6 @@ class Estoque extends Conexao
       }
     }
   }
-  public function getEstoqueById($id) // Passar o Id da Empresa
-  {
-    try {
-      $sql = "SELECT * FROM estoque WHERE emp_id = :id";
-
-      $stmt = $this->conexao->prepare($sql);
-      $stmt->bindParam(':id', $id, PDO::PARAM_INT);
-      $stmt->execute();
-
-      $estoque = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-      return $estoque ? $estoque   : array();
-    } catch (PDOException $e) {
-      echo 'Erro na consulta: ' . $e->getMessage();
-    }
-  }
-  public function getNomesProdutos()
-  {
-    try {
-      $sql = "SELECT nome_prod FROM produtos";
-
-      $stmt = $this->conexao->prepare($sql);
-      $stmt->execute();
-
-      $nomesProdutos = $stmt->fetchAll(PDO::FETCH_COLUMN);
-
-      return $nomesProdutos;
-    } catch (PDOException $e) {
-      echo 'Erro na consulta: ' . $e->getMessage();
-    }
-  }
   public function getMore($nomeEmp, $nomeProd)
   {
     try {

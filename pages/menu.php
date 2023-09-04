@@ -12,10 +12,10 @@ session_start() ?>
 
 <body>
   <style>
-  section.container {
-    background-color: #fff;
-    border-radius: 4px;
-  }
+    section.container {
+      background-color: #fff;
+      border-radius: 4px;
+    }
   </style>
   <div class="App">
     <header class="header">
@@ -60,14 +60,17 @@ session_start() ?>
     </footer>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="../utils/js/cboEmpresas.js"></script>
-  <script src="../utils/js/cboProdutos.js"></script>
-  <script src="../utils/js/tblEstoque.js"></script>
+  <script>
+    const localhost = 'http://localhost/Cursophp/Supermarket/';
+  </script>
+  <script src="../utils/js/attProduto.js"></script>
   <script src="../utils/js/cadEmpresa.js"></script>
   <script src="../utils/js/cadProduto.js"></script>
-  <script src="../utils/js/showProduct.js"></script>
+  <script src="../utils/js/cboEmpresas.js"></script>
+  <script src="../utils/js/cboProdutos.js"></script>
   <script src="../utils/js/showCompanies.js"></script>
-  <script src="../utils/js/attProduto.js"></script>
+  <script src="../utils/js/showProduct.js"></script>
+  <script src="../utils/js/tblEstoque.js"></script>
 </body>
 
 </html>

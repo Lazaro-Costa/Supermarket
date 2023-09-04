@@ -5,7 +5,7 @@ $('#formCadEmpresa').submit(function (e) {
   const cidade = $('#cidade');
   const numLojas = $('#numLojas');
   $.ajax({
-    url: 'http://localhost/Cursophp/Supermarket/utils/cadEmpresa.php',
+    url: localhost + 'utils/cadEmpresa.php',
     method: 'POST',
     data: {
       nome_emp: empresa.val(),

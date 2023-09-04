@@ -1,4 +1,3 @@
-const localhost = 'http://localhost/Cursophp/Supermarket/';
 function getEmpresas() {
   $.ajax({
     url: localhost + 'utils/getempresa.php',

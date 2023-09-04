@@ -19,7 +19,6 @@ function getEstoque(empresa) {
       setTimeout(function () {
         msg.fadeOut();
       }, 4000);
-      // alert('A empresa que escolheu ainda não tem produtos.');
     } else {
       $('#ocultar').css('display', 'none');
       $('#cadEstoque').css('display', 'none');
@@ -50,13 +49,4 @@ function getEstoque(empresa) {
       });
     }
   });
-}
-// getEstoque();
-
-{
-  /* <select name="cboEmpresa" id="cboEmpresa">
-  <option selected disabled>
-    Select Empresa
-  </option>
-</select>; */
 }

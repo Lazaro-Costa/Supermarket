@@ -2,17 +2,6 @@
 require 'conexao.php';
 class Empresa extends Conexao
 {
-  public function listarEmpresas()
-  {
-    try {
-      $sql = "SELECT * FROM empresa";
-      $stmt = $this->conexao->prepare($sql);
-      $stmt->execute();
-      return $stmt->fetchAll(PDO::FETCH_ASSOC);
-    } catch (PDOException $e) {
-      echo 'Erro na consulta: ' . $e->getMessage();
-    }
-  }
   public function showCompanies()
   {
     try {
@@ -82,20 +71,6 @@ class Empresa extends Conexao
     }
   }
 
-  public function excluirEmpresa($id)
-  {
-    try {
-      $sql = "DELETE FROM empresa WHERE id = :id";
-
-      $stmt = $this->conexao->prepare($sql);
-      $stmt->bindParam(':id', $id, PDO::PARAM_INT);
-
-      return $stmt->execute();
-    } catch (PDOException $e) {
-      echo 'Erro ao excluir a empresa: ' . $e->getMessage();
-      return false;
-    }
-  }
   public function getMoreInfoCo($nomeEmp)
   {
     try {

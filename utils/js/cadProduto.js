@@ -5,7 +5,7 @@ $('#formCadProduto').submit(function (e) {
   const tamQuant = $('#tamQuant');
 
   $.ajax({
-    url: 'http://localhost/Cursophp/Supermarket/utils/cadProduto.php',
+    url: localhost + 'utils/cadProduto.php',
     method: 'POST',
     data: {
       nome_prod: produto.val(),
