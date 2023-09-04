@@ -18,6 +18,7 @@
   padding: 0 .5rem;
 }
 /* demais spans */
+/* da tabela de produtos */
 .tableRow span{
   text-align: center;
   padding: .5rem;
@@ -34,6 +35,25 @@
   background-color: #a0a0a0;
 }
 .tableRow:hover{
+  background-color: #d2d2d2;
+}
+
+/* da tabela de empresas */
+.tableRowEmp span{
+  text-align: center;
+  padding: .5rem;
+}
+.tableRowEmp{  
+  border: 1px solid white;
+  background-color: #c8c8c8;
+  font-size: .774rem;
+  color: #011522;
+  line-height: 1.2;
+}
+.tableRowEmp:nth-child(even){
+  background-color: #a0a0a0;
+}
+.tableRowEmp:hover{
   background-color: #d2d2d2;
 }
 .disclaimer{
@@ -79,4 +99,10 @@ gap: 5px;
   background-color: #c4c4c4;
   padding: 1rem;
   color: #011522;
+}
+.rowInfo{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
 }

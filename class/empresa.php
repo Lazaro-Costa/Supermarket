@@ -13,22 +13,26 @@ class Empresa extends Conexao
       echo 'Erro na consulta: ' . $e->getMessage();
     }
   }
-  public function getEmpresaById($id)
+  public function showCompanies()
   {
     try {
-      $sql = "SELECT * FROM empresa WHERE id = :id";
+      $sql = "SELECT e.nome_emp, e.end, e.cidade, e.num_lojas, COUNT(es.prod_id) AS total_prods
+                FROM empresa e
+                LEFT JOIN estoque es ON e.id = es.emp_id
+                GROUP BY e.nome_emp, e.end, e.cidade, e.num_lojas
+                ORDER BY e.nome_emp";
 
       $stmt = $this->conexao->prepare($sql);
-      $stmt->bindParam(':id', $id, PDO::PARAM_INT);
       $stmt->execute();
 
-      $empresa = $stmt->fetch(PDO::FETCH_ASSOC);
+      $infoEmpresas = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-      return $empresa ? $empresa : array();
+      return $infoEmpresas;
     } catch (PDOException $e) {
-      echo 'Erro na consulta: ' . $e->getMessage();
+      return json_encode('Erro na consulta: ' . $e->getMessage());
     }
   }
+
   public function getNomesEmpresas()
   {
     try {
@@ -41,7 +45,7 @@ class Empresa extends Conexao
 
       return $nomesEmpresas;
     } catch (PDOException $e) {
-      echo 'Erro na consulta: ' . $e->getMessage();
+      return json_encode('Erro na consulta: ' . $e->getMessage());
     }
   }
 
@@ -89,6 +93,28 @@ class Empresa extends Conexao
       return $stmt->execute();
     } catch (PDOException $e) {
       echo 'Erro ao excluir a empresa: ' . $e->getMessage();
+      return false;
+    }
+  }
+  public function getMoreInfoCo($nomeEmp)
+  {
+    try {
+      $sql = "SELECT p.nome_prod AS nome_produto, es.preco 
+                FROM PRODUTOS p
+                INNER JOIN ESTOQUE es ON p.id = es.prod_id
+                INNER JOIN EMPRESA e ON es.emp_id = e.id
+                WHERE e.nome_emp = :emp
+                ORDER BY es.preco ASC";
+
+      $stmt = $this->conexao->prepare($sql);
+      $stmt->bindParam(':emp', $nomeEmp, PDO::PARAM_STR);
+      $stmt->execute();
+
+      $infoComp = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+      return $infoComp;
+    } catch (PDOException $e) {
+      echo 'Erro ao acessar o banco: ' . $e->getMessage();
       return false;
     }
   }

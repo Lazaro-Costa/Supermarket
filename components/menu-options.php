@@ -23,6 +23,7 @@
     <a href="?empresa">Cadastro de Empresas</a>
     <a href="?produto">Cadastro de Produtos</a>
     <a href="?verprodutos">Listar Produtos</a>
+    <a href="?verempresas">Listar Empresas</a>
     <a href="?attproduto">Atribuir Produtos</a>
   </div>
 </div>
