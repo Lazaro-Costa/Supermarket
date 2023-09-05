@@ -12,10 +12,10 @@ session_start() ?>
 
 <body>
   <style>
-    section.container {
-      background-color: #fff;
-      border-radius: 4px;
-    }
+  section.container {
+    background-color: #fff;
+    border-radius: 4px;
+  }
   </style>
   <div class="App">
     <header class="header">
@@ -61,7 +61,7 @@ session_start() ?>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script>
-    const localhost = 'http://localhost/Cursophp/Supermarket/';
+  const localhost = 'http://localhost/Cursophp/Supermarket/'; // MUDAR AQUI
   </script>
   <script src="../utils/js/attProduto.js"></script>
   <script src="../utils/js/cadEmpresa.js"></script>
