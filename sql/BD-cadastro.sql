@@ -1,9 +1,9 @@
-  -- phpMyAdmin SQL Dump
+-- phpMyAdmin SQL Dump
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 30/08/2023 às 14:32
+-- Tempo de geração: 05/09/2023 às 15:24
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -40,14 +40,14 @@ CREATE TABLE `empresa` (
 --
 
 INSERT INTO `empresa` (`id`, `nome_emp`, `end`, `cidade`, `num_lojas`) VALUES
-(1, 'Supermercado Walmart', 'Rua das Laranjeiras, 220', 'Cidade de Deus', 5),
-(2, 'Hipermercado Rodrigo', 'Rua das Flores', 'Cidade Imperador Paulo I', 3),
-(5, 'Minimercado Souza e Silva', 'Rua Maria Aparecida, 234', 'São Paulo', 5),
-(6, 'Rede Smart', 'Av. Olinda. 34', 'Salvador', 8),
-(7, 'Supermercado Estrela Dalva', 'Rua das Lamentações, 26', 'Cajazeiras', 4),
-(9, 'Megamercado Aespa', 'Rua Kwangya, 298', 'Seul', 34),
-(10, 'Empresa de Produtos Alimentícios', 'Rua Capitão Antonio Carlos, 255', 'São Domingos', 14),
-(12, 'JYP Enterteiniment', 'JYP Center, 205', 'Gangdongdae-ro', 14);
+(1, 'Supermercado Walmart', 'Rua das Laranjeiras, 220', 'Rio de Janeiro, RJ', 5),
+(2, 'Hipermercado Rodrigo', 'Rua das Flores', 'Xique-Xique, BA', 3),
+(5, 'Minimercado Souza e Silva', 'Rua Maria Aparecida, 234', 'São Paulo, SP', 5),
+(6, 'Rede Smart', 'Av. Olinda. 34', 'Salvador, BA', 8),
+(7, 'Supermercado Estrela Dalva', 'Rua das Lamentações, 26', 'Cajazeiras, PA', 4),
+(9, 'Megamercado Aespa', 'Rua Kwangya, 298', 'Seul, KR', 34),
+(10, 'Mercearia NewJeans', 'Rua Capitão Antonio Carlos, 255', 'São Domingos, GO', 14),
+(12, 'Mercado Abençoado', 'Alameda das Rosas, 205', 'Boa Vista, RR', 14);
 
 -- --------------------------------------------------------
 
@@ -80,7 +80,23 @@ INSERT INTO `estoque` (`id`, `emp_id`, `prod_id`, `preco`, `prod_quant`) VALUES
 (37, 7, 1, 7.34, 4),
 (38, 9, 3, 14.55, 14),
 (39, 9, 4, 13.87, 23),
-(40, 9, 5, 8.54, 16);
+(40, 9, 5, 8.54, 16),
+(41, 12, 5, 6.54, 12),
+(42, 12, 4, 11.90, 7),
+(43, 12, 3, 10.95, 4),
+(44, 12, 1, 7.43, 3),
+(45, 6, 3, 10.50, 5),
+(46, 5, 1, 8.45, 14),
+(47, 10, 1, 12.89, 10),
+(48, 10, 10, 19.90, 5),
+(49, 10, 9, 9.90, 6),
+(50, 10, 8, 22.49, 18),
+(51, 10, 7, 7.29, 23),
+(52, 12, 6, 22.50, 23),
+(53, 12, 9, 9.45, 23),
+(54, 1, 8, 19.95, 4),
+(55, 7, 10, 19.30, 3),
+(56, 1, 6, 17.90, 6);
 
 -- --------------------------------------------------------
 
@@ -103,8 +119,13 @@ INSERT INTO `produtos` (`id`, `nome_prod`, `marca`, `tam_quant`) VALUES
 (1, 'Colgate Total 12', 'Colgate', '90g'),
 (2, 'Refrigerante Lata', 'Coca-Cola', '300ml'),
 (3, 'Batata Pringles', 'Pringles', '114g'),
-(4, 'Ketchup Heinz Tradicional', 'Heinz', '379g'),
-(5, 'Detergente Neutro', 'Ypê', '500ml');
+(4, 'Ketchup Tradicional', 'Heinz', '379g'),
+(5, 'Detergente Neutro', 'Ypê', '500ml'),
+(6, 'Pilha AAA', 'Duracel', '7 un.'),
+(7, 'Macarrão de Sêmola Grano Duro', 'Linguine Paganini', '500g'),
+(8, 'Molho Barbacue Original', 'Heinz', '397g'),
+(9, 'Sardinha com molho de tomate', 'Gomes da Costa', '125g'),
+(10, 'Molho Shoyu tradicional', 'Sakura', '1L');
 
 --
 -- Índices para tabelas despejadas
@@ -144,13 +165,13 @@ ALTER TABLE `empresa`
 -- AUTO_INCREMENT de tabela `estoque`
 --
 ALTER TABLE `estoque`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- AUTO_INCREMENT de tabela `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Restrições para tabelas despejadas
