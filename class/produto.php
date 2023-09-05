@@ -48,22 +48,6 @@ class Produto extends Conexao
       return json_encode('Erro na consulta: ' . $e->getMessage());
     }
   }
-  public function getProdutoById($id)
-  {
-    try {
-      $sql = "SELECT * FROM produtos WHERE id = :id";
-
-      $stmt = $this->conexao->prepare($sql);
-      $stmt->bindParam(':id', $id, PDO::PARAM_INT);
-      $stmt->execute();
-
-      $produto = $stmt->fetch(PDO::FETCH_ASSOC);
-
-      return $produto ? $produto : array();
-    } catch (PDOException $e) {
-      echo 'Erro na consulta: ' . $e->getMessage();
-    }
-  }
   public function getNomesProdutos()
   {
     try {

@@ -1,6 +1,6 @@
 function getProdutos(empresa) {
   $.ajax({
-    url: 'http://localhost/Cursophp/Supermarket/utils/cboProduto.php',
+    url: localhost + 'utils/cboProduto.php',
     method: 'POST',
     data: {
       nome_emp: empresa,

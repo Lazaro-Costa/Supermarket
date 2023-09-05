@@ -1,7 +1,7 @@
 const showCompanies = () => {
   $.ajax({
     //Busca as empresas e faz a listagem na tabela
-    url: 'http://localhost/Cursophp/Supermarket/utils/showCompanies.php',
+    url: localhost + 'utils/showCompanies.php',
     method: 'GET',
     datatype: 'json',
   }).done(function (result) {
@@ -42,7 +42,7 @@ const showCompanies = () => {
       //monta o card do produto que foi clicado
       const nomeSupermercado = $(this).find('h1:eq(0)').text();
       $.ajax({
-        url: 'http://localhost/Cursophp/Supermarket/utils/getMoreInfoCo.php',
+        url: localhost + 'utils/getMoreInfoCo.php',
         method: 'POST',
         data: {
           nome_emp: nomeSupermercado,

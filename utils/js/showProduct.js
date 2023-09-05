@@ -1,7 +1,7 @@
 const getProducts = () => {
   $.ajax({
     //Busca os produtos e faz a listagem na tabela
-    url: 'http://localhost/Cursophp/Supermarket/utils/getProduto.php',
+    url: localhost + 'utils/getProduto.php',
     method: 'GET',
     datatype: 'json',
   }).done(function (result) {
@@ -46,7 +46,7 @@ const getProducts = () => {
       const nomeProduto = $(this).find('h1:eq(2)').text();
 
       $.ajax({
-        url: 'http://localhost/Cursophp/Facudade2/utils/getMoreEstoque.php',
+        url: localhost + 'utils/getMoreEstoque.php',
         method: 'POST',
         data: {
           nome_emp: nomeSupermercado,

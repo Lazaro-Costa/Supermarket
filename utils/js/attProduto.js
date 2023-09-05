@@ -15,7 +15,7 @@ $('.formAtt').submit(function (e) {
     }, 1500);
   } else {
     $.ajax({
-      url: 'http://localhost/Cursophp/Supermarket/utils/attProduto.php',
+      url: localhost + 'utils/attProduto.php',
       method: 'POST',
       data: {
         nome_emp: emp,
